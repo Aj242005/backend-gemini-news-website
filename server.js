@@ -34,7 +34,7 @@ async function fetchArticles() {
 function buildContextFromArticles(articles) {
     if (!articles || articles.length === 0) return "No recent articles available.";
 
-    const recentArticles = articles.slice(0, 5);
+    const recentArticles = articles;
     const summaries = recentArticles.map(article => {
         const pubDate = new Date(article.pubDate).toLocaleDateString();
         return `Title: "${article.title}", Source: ${article.source_name || "Unknown"}, Published: ${pubDate}.`;
